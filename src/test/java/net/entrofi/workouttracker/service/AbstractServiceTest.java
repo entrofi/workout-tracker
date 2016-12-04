@@ -1,17 +1,9 @@
-/*
- * Copyright 2003-2016 Monitise Group Limited. All Rights Reserved.
- *
- * Save to the extent permitted by law, you may not use, copy, modify,
- * distribute or create derivative works of this material or any part
- * of it without the prior written consent of Monitise Group Limited.
- * Any reproduction of this material must contain this notice.
- */
 package net.entrofi.workouttracker.service;
+
 
 import com.mongodb.BasicDBList;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -25,16 +17,9 @@ import java.nio.charset.Charset;
 
 import static junit.framework.TestCase.fail;
 
-/**
- * TODO add javadoc
- * Created on 30/11/2016.
- */
-
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(loader = AnnotationConfigContextLoader.class, classes = {ServiceTestsApplicationConfig.class})
 public class AbstractServiceTest {
-
 
     @Autowired
     private MongoTemplate mongoTemplate;

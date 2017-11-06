@@ -1,4 +1,3 @@
-
 package net.entrofi.workouttracker.domain.model;
 
 /**

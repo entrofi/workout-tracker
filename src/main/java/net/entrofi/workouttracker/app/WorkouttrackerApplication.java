@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class WorkouttrackerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(WorkouttrackerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(WorkouttrackerApplication.class, args);
+    }
 }

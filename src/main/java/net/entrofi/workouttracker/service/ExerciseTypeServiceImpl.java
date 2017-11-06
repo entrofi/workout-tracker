@@ -1,8 +1,6 @@
-
 package net.entrofi.workouttracker.service;
 
 import net.entrofi.workouttracker.domain.model.ExerciseType;
-import net.entrofi.workouttracker.domain.model.User;
 import net.entrofi.workouttracker.domain.repository.ExerciseTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -26,7 +24,7 @@ public class ExerciseTypeServiceImpl implements ExerciseTypeService {
 
     @Override
     public ExerciseType update(ExerciseType exerciseType) {
-        return  exerciseTypeRepository.save(exerciseType);
+        return exerciseTypeRepository.save(exerciseType);
     }
 
     @Override

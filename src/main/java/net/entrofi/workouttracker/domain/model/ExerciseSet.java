@@ -1,4 +1,3 @@
-
 package net.entrofi.workouttracker.domain.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;

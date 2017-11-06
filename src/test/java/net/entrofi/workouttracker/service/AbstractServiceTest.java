@@ -4,13 +4,10 @@ package net.entrofi.workouttracker.service;
 import com.mongodb.BasicDBList;
 import com.mongodb.DBObject;
 import com.mongodb.util.JSON;
+import net.entrofi.workouttracker.app.WorkouttrackerApplicationTests;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.util.StreamUtils;
 
 import java.io.IOException;
@@ -18,9 +15,7 @@ import java.nio.charset.Charset;
 
 import static junit.framework.TestCase.fail;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(loader = AnnotationConfigContextLoader.class, classes = {ServiceTestsApplicationConfig.class})
-public class AbstractServiceTest {
+public abstract class AbstractServiceTest extends WorkouttrackerApplicationTests {
 
     @Autowired
     private MongoTemplate mongoTemplate;

@@ -1,5 +1,6 @@
 package net.entrofi.workouttracker.domain.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -10,9 +11,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class ExerciseSet {
 
+    @Id
+    private String id;
+
     private ExerciseSetData targetSetData;
 
     private ExerciseSetData actualSetData;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public ExerciseSetData getTargetSetData() {
         return targetSetData;

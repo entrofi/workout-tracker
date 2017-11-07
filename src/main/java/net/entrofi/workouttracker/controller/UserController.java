@@ -16,7 +16,7 @@ import java.util.List;
  * Created by comakh on 29/09/2015.
  */
 @RestController
-@RequestMapping(value = "/v1/users")
+@RequestMapping(value = "/users")
 public class UserController {
 
 

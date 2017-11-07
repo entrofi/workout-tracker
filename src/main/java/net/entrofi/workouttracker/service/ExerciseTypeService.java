@@ -12,8 +12,6 @@ public interface ExerciseTypeService {
 
     ExerciseType save(ExerciseType exerciseType);
 
-    ExerciseType update(ExerciseType exerciseType);
-
     void delete(ExerciseType exerciseType);
 
     void delete(String id);

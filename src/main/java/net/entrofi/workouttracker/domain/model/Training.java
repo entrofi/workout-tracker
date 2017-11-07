@@ -1,5 +1,6 @@
 package net.entrofi.workouttracker.domain.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Set;
@@ -11,11 +12,22 @@ import java.util.Set;
 @Document
 public class Training {
 
+    @Id
+    private String id;
+
     private User owner;
 
     private Set<Workout> workouts;
 
     private String name;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public User getOwner() {
         return owner;

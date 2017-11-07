@@ -1,0 +1,6 @@
+[
+  { "_id" : {"$oid": "5a0087871dbc867d0798d576"}, "_class" : "net.entrofi.workouttracker.domain.model.ExerciseType", "name": "Narrow Triceps Pushdown", "description": "Push down without moving your shoulders, use only your elbows for pushing down"},
+  { "_id" : {"$oid": "5a0087871dbc867d0798d577"}, "_class" : "net.entrofi.workouttracker.domain.model.ExerciseType", "name": "Bench Press", "description": "Default description"},
+  { "_id" : {"$oid": "5a0087871dbc867d0798d578"}, "_class" : "net.entrofi.workouttracker.domain.model.ExerciseType", "name": "Inclined Bench Press", "description": "Default description"},
+  { "_id" : {"$oid": "5a0087871dbc867d0798d579"}, "_class" : "net.entrofi.workouttracker.domain.model.ExerciseType", "name": "Cable Crossover", "description": "Default description"}
+]

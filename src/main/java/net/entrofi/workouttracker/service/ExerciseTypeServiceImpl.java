@@ -23,11 +23,6 @@ public class ExerciseTypeServiceImpl implements ExerciseTypeService {
     }
 
     @Override
-    public ExerciseType update(ExerciseType exerciseType) {
-        return exerciseTypeRepository.save(exerciseType);
-    }
-
-    @Override
     public void delete(ExerciseType exerciseType) {
         exerciseTypeRepository.delete(exerciseType);
     }

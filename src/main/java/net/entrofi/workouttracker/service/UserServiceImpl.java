@@ -12,20 +12,11 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
 
-//    @Autowired
-//    private MongoOperations mongoOperations;
-
-
     @Inject
     private UserRepository userRepository;
 
     @Override
     public User save(User user) {
-        userRepository.save(user);
-        return user;
-    }
-
-    public User update(User user) {
         userRepository.save(user);
         return user;
     }

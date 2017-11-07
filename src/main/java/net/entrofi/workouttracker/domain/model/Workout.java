@@ -1,5 +1,6 @@
 package net.entrofi.workouttracker.domain.model;
 
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -15,6 +16,7 @@ public class Workout {
 
     private LocalDate date;
 
+    @DBRef
     private Exercise warmUpExcercise;
 
     private int streching;

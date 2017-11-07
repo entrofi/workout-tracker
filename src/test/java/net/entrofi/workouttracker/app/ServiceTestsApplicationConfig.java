@@ -1,4 +1,4 @@
-package net.entrofi.workouttracker.service;
+package net.entrofi.workouttracker.app;
 
 import com.mongodb.MongoClient;
 import cz.jirutka.spring.embedmongo.EmbeddedMongoFactoryBean;

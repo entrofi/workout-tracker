@@ -1,14 +1,16 @@
-package net.entrofi.workouttracker.app;
+package net.entrofi.workouttracker.web;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-@SuppressWarnings("CheckStyle")
+@SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 @SpringBootApplication
-public class WorkouttrackerApplication {
+public class WorkoutTrackerWeb {
+
 
     public static void main(String[] args) {
-        SpringApplication.run(WorkouttrackerApplication.class, args);
+        SpringApplication.run(WorkoutTrackerWeb.class, args);
     }
 }

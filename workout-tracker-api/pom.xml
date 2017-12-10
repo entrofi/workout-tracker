@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.entrofi.sportsforfun</groupId>
-    <artifactId>workouttracker</artifactId>
+    <artifactId>workouttracker-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Workout Tracker</name>
     <description>Personal Workout Tracker</description>
@@ -21,9 +21,6 @@
         <checkstyle.config.location>https://raw.githubusercontent.com/entrofi/shared-config-repository/master/code-quality/checkstyle/checkstyle.xml</checkstyle.config.location>
         <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
     </properties>
-
-
-
     <dependencyManagement>
         <dependencies>
             <dependency>

@@ -1,4 +1,4 @@
-package net.entrofi.workouttracker.controller;
+package net.entrofi.workouttracker.api.controller;
 
 import net.entrofi.workouttracker.domain.model.User;
 import net.entrofi.workouttracker.service.UserService;

@@ -12,8 +12,10 @@ package net.entrofi.workouttracker.domain.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.core.GrantedAuthority;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 /**
  * User<br/>
@@ -51,6 +53,26 @@ public class User implements Serializable {
 
 
     private String lastName;
+
+    private boolean accountNonExpired;
+
+    private boolean accountNonLocked;
+
+    private boolean credentialsNonExpired;
+
+    private boolean enabled;
+
+    private Collection<? extends GrantedAuthority> grantedAuthorities;
+
+
+
+    public User() {
+
+    }
+
+    public User(String username, String password) {
+
+    }
 
 
     public String getId() {
@@ -107,5 +129,45 @@ public class User implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public boolean isAccountNonExpired() {
+        return accountNonExpired;
+    }
+
+    public void setAccountNonExpired(boolean accountNonExpired) {
+        this.accountNonExpired = accountNonExpired;
+    }
+
+    public boolean isAccountNonLocked() {
+        return accountNonLocked;
+    }
+
+    public void setAccountNonLocked(boolean accountNonLocked) {
+        this.accountNonLocked = accountNonLocked;
+    }
+
+    public boolean isCredentialsNonExpired() {
+        return credentialsNonExpired;
+    }
+
+    public void setCredentialsNonExpired(boolean credentialsNonExpired) {
+        this.credentialsNonExpired = credentialsNonExpired;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public Collection<? extends GrantedAuthority> getGrantedAuthorities() {
+        return grantedAuthorities;
+    }
+
+    public void setGrantedAuthorities(Collection<? extends GrantedAuthority> grantedAuthorities) {
+        this.grantedAuthorities = grantedAuthorities;
     }
 }

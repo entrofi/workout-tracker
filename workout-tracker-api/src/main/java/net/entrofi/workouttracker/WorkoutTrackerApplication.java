@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 
 
 @SuppressWarnings("checkstyle:HideUtilityClassConstructor")
-@EnableGlobalMethodSecurity
 @EnableAutoConfiguration
 @SpringBootApplication
 public class WorkoutTrackerApplication {

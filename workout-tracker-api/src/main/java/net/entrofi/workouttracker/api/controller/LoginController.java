@@ -5,12 +5,11 @@ import net.entrofi.workouttracker.api.LoginHelper;
 import net.entrofi.workouttracker.api.model.Credentials;
 import net.entrofi.workouttracker.api.model.CurrentUserInfo;
 import net.entrofi.workouttracker.domain.model.User;
-import net.entrofi.workouttracker.domain.repository.UserRepository;
 import net.entrofi.workouttracker.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.mvc.ControllerLinkBuilder;
+import org.springframework.hateoas.EntityLinks;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,16 +38,19 @@ public final class LoginController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private EntityLinks entityLinks;
+
 
     @RequestMapping(value = "/status", method = RequestMethod.GET)
     public HttpEntity<CurrentUserInfo> getStatus() {
         String userId = getCurrentUserInfo().getUserId();
-        getCurrentUserInfo().add(
-                ControllerLinkBuilder.linkTo(
-                        ControllerLinkBuilder.methodOn(UserRepository.class).findById(userId)
-                ).withSelfRel());
-        return new ResponseEntity<CurrentUserInfo>(getCurrentUserInfo(), HttpStatus.OK);
+        CurrentUserInfo currentUserInfo = getCurrentUserInfo();
+        currentUserInfo.add(entityLinks
+                        .linkForSingleResource(User.class, userId).withSelfRel());
+        return new ResponseEntity<CurrentUserInfo>(currentUserInfo, HttpStatus.OK);
     }
+
 
     @RequestMapping(method = RequestMethod.POST)
     public HttpEntity<CurrentUserInfo> login(@RequestBody Credentials credentials) {

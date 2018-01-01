@@ -4,7 +4,7 @@ package net.entrofi.workouttracker.api.model;
 
 import org.springframework.hateoas.ResourceSupport;
 
-public class Credentials extends ResourceSupport{
+public class Credentials extends ResourceSupport {
 
     private String username;
 

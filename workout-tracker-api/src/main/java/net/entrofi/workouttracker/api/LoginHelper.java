@@ -23,7 +23,7 @@ public final class LoginHelper {
         try {
             final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             final Optional<Authentication> authOptional = Optional.ofNullable(authentication);
-            userDetailsOp = authOptional.filter(LoginHelper::isValidAuthentication)
+            userDetailsOp = authOptional.filter(a -> !isInvalidAuthentication(a))
                     .map(a -> (UserDetails) a.getPrincipal());
         } catch (Exception e) {
             LOGGER.warn("Error getting current user details", e);
@@ -31,7 +31,7 @@ public final class LoginHelper {
         return userDetailsOp;
     }
 
-    private static boolean isValidAuthentication(final Authentication authentication) {
+    private static boolean isInvalidAuthentication(final Authentication authentication) {
         return authentication == null
                 || !authentication.isAuthenticated()
                 ||  ANONYMOUS_USER.equals(authentication.getName());

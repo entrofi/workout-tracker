@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CurrentUserInfo extends ResourceSupport{
+public class CurrentUserInfo extends ResourceSupport {
 
     private final boolean loggedIn;
 

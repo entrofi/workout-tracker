@@ -28,9 +28,9 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/login")
-public final class LoginController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+@RequestMapping("/auth")
+public final class AuthController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuthController.class);
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -52,7 +52,7 @@ public final class LoginController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public HttpEntity<CurrentUserInfo> login(@RequestBody Credentials credentials) {
 
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
@@ -69,6 +69,13 @@ public final class LoginController {
         }
 
         return getStatus();
+    }
+
+
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    public HttpEntity<User> signUp(@RequestBody User user) {
+        userService.signUp(user);
+        return new ResponseEntity<User>(user, HttpStatus.OK);
     }
 
     private CurrentUserInfo getCurrentUserInfo() {

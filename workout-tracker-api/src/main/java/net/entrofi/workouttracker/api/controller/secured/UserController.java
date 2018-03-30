@@ -1,5 +1,6 @@
-package net.entrofi.workouttracker.api.controller;
+package net.entrofi.workouttracker.api.controller.secured;
 
+import net.entrofi.workouttracker.api.RequestMappingConstants;
 import net.entrofi.workouttracker.domain.model.User;
 import net.entrofi.workouttracker.service.UserService;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ import java.util.List;
  * Created by comakh on 29/09/2015.
  */
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = RequestMappingConstants.SECURED_PATH_URL + "/users")
 public class UserController {
 
 
@@ -31,8 +32,8 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "find", method = RequestMethod.GET)
-    public User find(String id) {
+    @RequestMapping(value = "/find/{id}", method = RequestMethod.GET)
+    public User find(@PathVariable  String id) {
         return userService.find(id);
     }
 

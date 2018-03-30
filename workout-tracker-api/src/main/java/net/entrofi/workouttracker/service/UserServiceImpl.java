@@ -2,8 +2,9 @@ package net.entrofi.workouttracker.service;
 
 import net.entrofi.workouttracker.domain.model.User;
 import net.entrofi.workouttracker.domain.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
@@ -12,13 +13,26 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
 
-    @Inject
+    @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder encoder;
 
     @Override
     public User save(User user) {
         userRepository.save(user);
         return user;
+    }
+
+    @Override
+    public User signUp(User user) {
+        user.setAccountNonExpired(true);
+        user.setAccountNonLocked(true);
+        user.setCredentialsNonExpired(true);
+        user.setEnabled(true);
+        user.setPassword(encoder.encode(user.getPassword()));
+        return userRepository.save(user);
     }
 
     @Override

@@ -1,25 +1,29 @@
 package net.entrofi.workouttracker.domain.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Metadata holder for exercise. Mainly gives the description and name for the exercise.
+ * TODO add javadoc
+ * Created on 29/11/2016.
  */
 @Document
-public class Exercise {
+public class WorkoutExercise {
+
 
     @Id
     private String id;
 
     private String name;
 
-    private String description;
+    @DBRef
+    private Exercise exercise;
 
-    private Set<ExerciseTarget> targets = new HashSet<>();
+    private Set<ExerciseSet> sets = new HashSet<>();
 
     public String getId() {
         return id;
@@ -37,19 +41,19 @@ public class Exercise {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public Exercise getExercise() {
+        return exercise;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
     }
 
-    public Set<ExerciseTarget> getTargets() {
-        return targets;
+    public Set<ExerciseSet> getSets() {
+        return sets;
     }
 
-    public void setTargets(Set<ExerciseTarget> targets) {
-        this.targets = targets;
+    public void setSets(Set<ExerciseSet> sets) {
+        this.sets = sets;
     }
 }

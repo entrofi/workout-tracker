@@ -1,29 +1,16 @@
 package net.entrofi.workouttracker.domain.model;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- * TODO add javadoc
- * Created on 29/11/2016.
+ * @author Hasan COMAK
  */
 @Document
-public class ExerciseType {
-
-    @Id
-    private String id;
+public class ExerciseTarget {
 
     private String name;
 
     private String description;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

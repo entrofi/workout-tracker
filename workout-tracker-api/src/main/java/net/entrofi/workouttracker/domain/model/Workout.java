@@ -17,7 +17,7 @@ public class Workout {
     private LocalDate date;
 
     @DBRef
-    private Exercise warmUpExcercise;
+    private WorkoutExercise warmUpExcercise;
 
     private int streching;
 
@@ -33,7 +33,7 @@ public class Workout {
 
     private int maxHeartRate;
 
-    private Set<Exercise> exercises;
+    private Set<WorkoutExercise> workoutExercises;
 
     private Training training;
 
@@ -45,11 +45,11 @@ public class Workout {
         this.date = date;
     }
 
-    public Exercise getWarmUpExcercise() {
+    public WorkoutExercise getWarmUpExcercise() {
         return warmUpExcercise;
     }
 
-    public void setWarmUpExcercise(Exercise warmUpExcercise) {
+    public void setWarmUpExcercise(WorkoutExercise warmUpExcercise) {
         this.warmUpExcercise = warmUpExcercise;
     }
 
@@ -109,12 +109,12 @@ public class Workout {
         this.maxHeartRate = maxHeartRate;
     }
 
-    public Set<Exercise> getExercises() {
-        return exercises;
+    public Set<WorkoutExercise> getWorkoutExercises() {
+        return workoutExercises;
     }
 
-    public void setExercises(Set<Exercise> exercises) {
-        this.exercises = exercises;
+    public void setWorkoutExercises(Set<WorkoutExercise> workoutExercises) {
+        this.workoutExercises = workoutExercises;
     }
 
     public Training getTraining() {

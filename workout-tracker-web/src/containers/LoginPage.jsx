@@ -32,13 +32,14 @@ class LoginPage extends React.Component {
      * @param {object} event - the JavaScript event object
      */
     processForm(event) {
+        var self = this;
         // prevent default action. in this case, action is the form submission event
         event.preventDefault();
 
         // create a string for an HTTP body message
         const formData = {username: this.state.user.email, password: this.state.user.password};
         console.log("User state: " + this.state.user);
-        const loginURL = 'http://localhost:8080/login/';
+        const loginURL = 'http://localhost:8080/auth/login';
 
         // create an AJAX request
         // create an AJAX request
@@ -52,12 +53,13 @@ class LoginPage extends React.Component {
             success: function(data) {
                 this.setState({errors:{}});
                 console.log("Form is valid");
+                self.props.history.push('/');
             }.bind(this),
             error: function(xhr, status, err) {
                 this.setState({errors: {err}});
                 console.log(loginURL, status, err.message);
             }.bind(this)
-        })
+        });
     }
 
     /**
